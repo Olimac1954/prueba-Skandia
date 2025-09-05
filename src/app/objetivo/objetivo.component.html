@@ -1,1 +1,59 @@
-<p>objetivo works!</p>
+<div class="objetivo-container">
+  <div class="content">
+    <div class="inicio-container">
+      <img src="/house.png" class="icon" alt="Inicio" style="width:1%; margin-right:0px;"> 
+      <a href="#" class="inicio">Ir al inicio</a>
+    </div>
+    <div class="header">
+      <h2>¡Tu objetivo ha sido agregado exitosamente!</h2>
+      <p>¡Te hemos enviado un correo con la notificación!</p>
+    </div>
+    <div class="content1">
+      <div class="resumen-objetivo">
+        <div class="resumenPT1">
+          <div class="izquierda">
+          <h3>{{ objetivo.nombre }}</h3>
+          <p>Categoría: {{ objetivo.categoria }}</p>
+          </div>
+          <div class="derecha">
+          <p>Revisar objetivo</p>
+          </div>
+        </div>
+        <div class="datos">
+          <div class="dato">
+            <span class="label">En esta fecha:</span>
+            <span class="valor" style="background-color: #A5D7E1;">{{ objetivo.fecha }}</span>
+          </div>
+          <div class="dato">
+            <span class="label">Lograrás:</span>
+            <span class="valor" style="background-color: #FECD72;">$ {{ objetivo.monto}}</span>
+          </div>
+          <div class="dato">
+            <span class="label"><img src="/star2.png" class="star2" style="height: 15px; margin-right: 5px;" >Ya cuentas con:</span>
+            <span class="valor" style="background-color: #95DBB7;">$ {{ objetivo.actual }}</span>
+          </div>
+        </div>
+        <div class="resumenPT2">
+        <span><img src="/check.png" class="icon" alt="Inicio" style="height: 15px; margin-right: 10px;">¡Asocia productos para monitorear su progreso!</span>
+        <img src="/mountain.png" class="mountain" alt="Inicio" >
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mensaje">
+    <h2>vamos por esos <span class="monto">$ {{ objetivo.monto }}</span> para<span class="monto"> {{ objetivo.nombre }}</span>!</h2>
+    <p>!Através de tus productos y nuestros rendimientos podremos lograrlo!</p>
+    <p>Asocia tus productos o adquiere uno nuevo. <img src="/Group.png" class="icon" alt="Inicio"style="height: 15px; margin-right: 10px;" ></p>
+  </div>
+  <div class="productos">
+    <div class="producto-card" *ngFor="let prod of productos">
+      <h4>{{ prod.nombre }}</h4>
+      <p>ID: {{ prod.id }}</p>
+      <p>Ya cuentas con: {{ prod.ahorro | currency:'COP' }}</p>
+      <div class="info-adicional">
+        <p *ngIf="prod.recomendacion">{{ prod.recomendacion }}</p>
+        <p *ngIf="prod.info">{{ prod.info }}</p>
+      </div>
+    </div>
+  </div>
+</div>

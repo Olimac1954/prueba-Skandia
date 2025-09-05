@@ -4,17 +4,12 @@
 
 /* contenido corre a la derecha según ancho del sidebar */
 .content {
-  flex: 1;
+  margin-top: 80px;
   margin-left: 60px; /* mismo ancho del sidebar cerrado */
-  padding: 20px;
   transition: margin-left 0.3s ease;
 }
 
 .sidebar.expanded ~ .content {
   margin-left: 200px; /* mismo ancho del sidebar expandido */
-}
-.content {
-  margin-top: 60px; /* altura navbar */
-  padding: 20px;
 }
 

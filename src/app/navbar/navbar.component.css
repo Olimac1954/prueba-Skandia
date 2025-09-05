@@ -64,7 +64,7 @@ body {
   flex: 1; /* ocupa el resto */
   justify-content: flex-end; /* se alinea a la derecha */
   gap: 25px;
-  margin-right: 3%;
+  margin-right: 5%;
 }
 
 .navbar-right a {
@@ -92,6 +92,30 @@ body {
 .navbar-right img {
   height: 33px;
 }
+
+.help {
+  position: relative; /* necesario para posicionar el span */
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* espacio entre icono y texto */
+  text-decoration: none; /* quitar subrayado si es link */
+  color: #000; /* color del texto */
+}
+
+.tooltip-text {
+  font: 16px verdana, sans-serif;
+  display: none; /* inicialmente oculto */
+  font-size: 14px;
+  background: none; /* si quieres fondo, pon color */
+  color: #00C83C; /* ejemplo de color */
+  flex-direction: column;
+  font-weight: bold;
+}
+
+.help:hover .tooltip-text {
+  display: flex; /* se muestra al pasar el cursor */
+}
+
 
 
 /* === RESPONSIVE === */
