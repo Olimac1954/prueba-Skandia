@@ -1,0 +1,90 @@
+html, body {
+  margin: 0;
+  padding-top: 60px;
+  width: 100%;
+}
+
+/* Navbar */
+.navbar {/* diseño del area general del navbar */
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 10px 20px;
+  height: 60px;
+  z-index: 1000;
+}
+.navbar-left, .navbar-right {/*se le dice que el navbar izquierdo y derecho se distribuyan el espacio de manera equitativa*/
+  flex: 1;
+}
+
+.navbar-BTlateral {/*estilo del boton del menu anburguesa*/
+ flex: 0 0 auto;
+ width: 20px;/*sele da un tamaño personalizado*/
+ margin-right: 160px;
+}
+/* Lado izquierdo1 */
+.navbar-left {/*estilo de la parte izquieda del nabvar*/
+  display: flex;
+  align-items: center;
+  margin-right: 350px;
+  gap: 10px;
+}
+.navTitle {
+  font: 18px Montserrat, sans-serif;
+  color: #3F3F3F;
+}
+.icon3Bars {  
+  width: 20px;
+  height: 30px;  
+}
+
+.logo {
+  height: 25px;
+  margin-left: 10px;
+}
+
+.vertical-divider {
+  display: inline-block;
+  width: 3px;
+  height: 28px;
+  background-color: #3F3F3F;
+  margin: 0 15px;
+}
+
+/* Lado derecho */
+.navbar-right {
+  display: flex;
+  align-items: right;
+  gap: 25px;
+  margin-left: 150px;
+}
+
+.navbar-right a {
+  text-decoration: none;
+  color: green;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+
+.navTitle2 {
+  font: 16px verdana, sans-serif;
+  color: #00C83C;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.navbar-right a:hover {
+  text-decoration: underline;
+}
+
+.navbar-right img {
+  height: 33px;
+}
+
+
+
+
+

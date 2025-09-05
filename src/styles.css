@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+:root{
+  --navbar-height: 64px;        /* ajusta a la altura real de tu navbar */
+  --sidebar-collapsed: 60px;
+  --sidebar-expanded: 220px;
+  --navbar-z: 1100;
+  --sidebar-z: 1000;
+}
+html,body { height:100%; margin:0; }

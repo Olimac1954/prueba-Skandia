@@ -1,0 +1,13 @@
+<app-navbar (toggleSidebar)="isSidebarOpen = !isSidebarOpen"></app-navbar>
+
+<app-sidebar [isOpen]="isSidebarOpen"></app-sidebar>
+
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
+
+
+
+
+
+

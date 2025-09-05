@@ -1,0 +1,31 @@
+<div class="sidebar" [class.open]="isOpen">
+  <ul>
+    <li >
+      <!-- imagen como icono -->
+      <img src="/home.png" class="icon" alt="Inicio">
+      <!-- texto -->
+      <span *ngIf="isOpen" class="titleLateral">Inicio</span>
+    </li>
+    <li >
+      <img src="/hoja1.png" class="icon" alt="Contratos">
+      <span *ngIf="isOpen" class="titleLateral">Contratos</span>
+    </li>
+    <li>
+      <img src="/Tool.png" class="icon" alt="Acciones">
+      <span *ngIf="isOpen" class="titleLateral">Acciones</span>
+    </li>
+    <li>
+      <img src="/star.png" class="icon" alt="Aportes">
+      <span *ngIf="isOpen" class="titleLateral">Objetivos</span>
+    </li>
+    <li>
+      <img src="/money.png" class="icon" alt="Herramientas">
+      <span *ngIf="isOpen" class="titleLateral">Herramientas</span>
+    </li>
+    <li>
+      <img src="/talk2.png" class="icon" alt="ServicioAlCliente">
+      <span *ngIf="isOpen" class="titleLateral">Servicio al cliente</span>
+    </li>
+  </ul>
+</div>
+
