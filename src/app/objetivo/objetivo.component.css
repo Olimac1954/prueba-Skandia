@@ -13,8 +13,6 @@
   margin-bottom: 0;       /* Sin margen adicional */
   justify-content: flex-start; /* Alinea al inicio */
   margin-top: 4%;
-
-  
 }
 
 .header h2 {
@@ -41,6 +39,7 @@
   padding-left: 6%;
   align-items: center;  
 }
+
 .inicio-container a{
   margin-left : 10px;
   font: 15px verdana, sans-serif;
@@ -55,7 +54,6 @@
   color: #00C83C;             /* Ajusta el color */
   font-weight: bold;
 }
-
 
 .productos {
   display: flex;
@@ -85,6 +83,7 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+
 .content1 {
   margin-bottom: -120px;
   display: flex;
@@ -94,9 +93,9 @@
   padding: 2px 0;
 }
 
-
 .resumen-objetivo {
-  width: 700px;
+  width: 90% ;
+  max-width: 700px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.2);
@@ -160,7 +159,7 @@
 }
 
 .dato {
-  width: 20%;            /* ancho fijo para cada dato */
+  width: 28%;            /* ancho fijo para cada dato */
   display: flex;
   flex-direction: column; /* apila verticalmente label y valor */
   margin-bottom: 5px;     /* separación entre datos */
@@ -181,21 +180,22 @@
    border-radius: 4px;
 }
 
-
 .resumenPT2 {
   display: flex;
   justify-content: space-between; /* texto a la izquierda, imagen a la derecha */
   align-items: center;            /* centra verticalmente los elementos */
   font-weight: bold;
-  font: 12px verdana, sans-serif;
+  font: 15px verdana, sans-serif;
   color: #00C83C;
   font-weight: bold;
   text-decoration: underline;
   margin-top: auto;               /* empuja la sección al fondo del contenedor */
 }
+
 .resumenPT2 span{
   margin-left: 5% ;
 }
+
 .resumenPT2 image{  
   height: 5px;
 }
@@ -206,8 +206,9 @@
   height: auto;
   border-radius: 10px;
 }
+
 .mensaje {
-  padding: 150px;
+  padding: 50px 20px; /* antes era 150px, demasiado en móviles */
   width: 100%;
   text-align: center;
   background-image: url('/fondo.png'); /* Ruta de la imagen */
@@ -215,19 +216,107 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+
 .mensaje p{
   font: 15px montserrat, sans-serif;
   margin: 2px;
    color: #3F3F3F;
    font-weight: bold;
 }
+
 .mensaje h2{
-  font: 20px montserrat, sans-serif;
+  margin-top: 120px;
+  font: 35px montserrat, sans-serif;
   color: #3F3F3F;
   font-weight: bold;
 }
+
 h2 .monto {
-  font: 20px montserrat, sans-serif;
+  font: 35px montserrat, sans-serif;
   color: #FD980F; /* color solo del monto */
   font-weight: bold; /* opcional, para resaltarlo */
+}
+
+/* responsive*/
+/* Tablets */
+@media (max-width: 1024px) {
+  .resumen-objetivo {
+    width: 80%;
+  }
+
+  .datos {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .dato {
+    width: 100%;
+  }
+
+  .header h2 {
+    font-size: 28px;
+  }
+
+  .header p {
+    font-size: 16px;
+  }
+
+  .mensaje h2 {
+    font-size: 18px;
+  }
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+  .inicio-container {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 5%;
+    padding-left: 0;
+  }
+
+  .inicio-container img {
+    width: 20px; /* ajusta el icono */
+  }
+
+  .header h2 {
+    font-size: 22px;
+  }
+
+  .header p {
+    font-size: 14px;
+  }
+
+  .resumenPT1 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .resumenPT2 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .datos {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .dato {
+    width: 100%;
+  }
+
+  .mensaje {
+    padding: 30px 10px;
+  }
+
+  .mensaje h2 {
+    font-size: 16px;
+  }
+
+  .mensaje p {
+    font-size: 14px;
+  }
 }

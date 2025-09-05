@@ -45,15 +45,18 @@
     <p>!Através de tus productos y nuestros rendimientos podremos lograrlo!</p>
     <p>Asocia tus productos o adquiere uno nuevo. <img src="/Group.png" class="icon" alt="Inicio"style="height: 15px; margin-right: 10px;" ></p>
   </div>
-  <div class="productos">
-    <div class="producto-card" *ngFor="let prod of productos">
-      <h4>{{ prod.nombre }}</h4>
-      <p>ID: {{ prod.id }}</p>
-      <p>Ya cuentas con: {{ prod.ahorro | currency:'COP' }}</p>
-      <div class="info-adicional">
-        <p *ngIf="prod.recomendacion">{{ prod.recomendacion }}</p>
-        <p *ngIf="prod.info">{{ prod.info }}</p>
-      </div>
+
+
+</div>
+
+<div class="productos">
+  <div class="producto-card" *ngFor="let prod of productos">
+    <h4>{{ prod.nombre }}</h4>
+    <p>ID: {{ prod.id }}</p>
+    <p>Ya cuentas con: {{ prod.ahorro | currency:'COP' }}</p>
+    <div class="info-adicional">
+      <p *ngIf="prod.recomendacion">{{ prod.recomendacion }}</p>
+      <p *ngIf="prod.info">{{ prod.info }}</p>
     </div>
   </div>
 </div>
