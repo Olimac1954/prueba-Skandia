@@ -1,91 +1,133 @@
 <div class="objetivo-container">
+  <!-- Contenedor principal de la sección de objetivos -->
+
   <div class="content">
+    <!-- Contenedor del contenido principal -->
+
     <div class="inicio-container">
+      <!-- Enlace rápido para ir al inicio -->
       <img src="/house.png" class="icon" alt="Inicio" style="width:1%; margin-right:0px;"> 
       <a href="#" class="inicio">Ir al inicio</a>
     </div>
+
     <div class="header">
+      <!-- Mensaje de éxito al agregar el objetivo -->
       <h2>¡Tu objetivo ha sido agregado exitosamente!</h2>
       <p>¡Te hemos enviado un correo con la notificación!</p>
     </div>
+
     <div class="content1">
+      <!-- Resumen del objetivo -->
       <div class="resumen-objetivo">
+
         <div class="resumenPT1">
+          <!-- Primera parte del resumen -->
           <div class="izquierda">
-          <h3>{{ objetivo.nombre }}</h3>
-          <p>Categoría: {{ objetivo.categoria }}</p>
+            <h3>{{ objetivo.nombre }}</h3>
+            <p>Categoría: {{ objetivo.categoria }}</p>
           </div>
           <div class="derecha">
-          <p>Revisar objetivo</p>
+            <p>Revisar objetivo</p>
           </div>
         </div>
+
         <div class="datos">
+          <!-- Información detallada del objetivo -->
           <div class="dato">
             <span class="label">En esta fecha:</span>
             <span class="valor" style="background-color: #A5D7E1;">{{ objetivo.fecha }}</span>
           </div>
           <div class="dato">
             <span class="label">Lograrás:</span>
-            <span class="valor" style="background-color: #FECD72;">$ {{ objetivo.monto}}</span>
+            <span class="valor" style="background-color: #FECD72;">$ {{ objetivo.monto | number:'1.0-0'}}</span>
           </div>
           <div class="dato">
-            <span class="label"><img src="/star2.png" class="star2" style="height: 15px; margin-right: 5px;" >Ya cuentas con:</span>
-            <span class="valor" style="background-color: #95DBB7;">$ {{ objetivo.actual }}</span>
+            <span class="label">
+              <img src="/star2.png" class="star2" style="height: 15px; margin-right: 5px;" >
+              Ya cuentas con:
+            </span>
+            <span class="valor" style="background-color: #95DBB7;">$ {{ objetivo.actual | number:'1.0-0'  }}</span>
           </div>
         </div>
+
         <div class="resumenPT2">
-        <span><img src="/check.png" class="icon" alt="Inicio" style="height: 15px; margin-right: 10px;">¡Asocia productos para monitorear su progreso!</span>
-        <img src="/mountain.png" class="mountain" alt="Inicio" >
+          <!-- Segunda parte del resumen con recomendación y gráfica -->
+          <span>
+            <img src="/check.png" class="icon" alt="Inicio" style="height: 15px; margin-right: 10px;">
+            ¡Asocia productos para monitorear su progreso!
+          </span>
+          <img src="/mountain.png" class="mountain" alt="Inicio" >
         </div>
+
       </div>
     </div>
   </div>
+
   <div class="mensaje">
-    <h2>vamos por esos <span class="monto">$ {{ objetivo.monto }}</span> para<span class="monto"> {{ objetivo.nombre }}</span>!</h2>
-    <p>!Através de tus productos y nuestros rendimientos podremos lograrlo!</p>
-    <p>Asocia tus productos o adquiere uno nuevo. <img src="/Group.png" class="icon" alt="Inicio"style="height: 15px; margin-right: 10px;" ></p>
+    <!-- Mensaje motivacional y CTA -->
+    <h2>
+      vamos por esos <span class="monto">$ {{ objetivo.monto| number:'1.0-0' }}</span> 
+      para <span class="monto"> {{ objetivo.nombre }}</span>!
+    </h2>
+    <p>¡A través de tus productos y nuestros rendimientos podremos lograrlo!</p>
+    <p>
+      Asocia tus productos o adquiere uno nuevo. 
+      <img src="/Group.png" class="icon" alt="Inicio" style="height: 15px; margin-right: 10px;">
+    </p>
   </div>
 
-    <div class="carrusel-container">
+  <!-- =========================
+       CARRUSEL DE PRODUCTOS
+  ========================= -->
+  <div class="carrusel-container">
+    <!-- Botón anterior -->
     <button class="carrusel-btn prev" (click)="moverCarrusel('prev')">
       <img src="/Fizquierda.png" alt="Anterior">
     </button>
 
     <div class="carrusel-wrapper">
       <div class="carrusel" id="carrusel">
+        <!-- Cards de productos dinámicos -->
         <div class="producto-card" *ngFor="let prod of productos">
           <div class="check">
             <img src="/cuadradoCH.png" alt="Anterior" style="height: 20px;">
           </div>
-            <div class="datosficha">
-              <h4>{{ prod.nombre }}</h4>
-              <p>ID: {{ prod.id }}</p>
-              <div class="linea-vertical" style=" height:2px;width: 95%;background-color: #C4C7C4; border-radius: 3px;"></div>
-              <h4>{{ prod.nombre }}</h4>
-              <p style="color:#00C83C;">{{ prod.ahorro | currency:'COP' }}</p>
-            </div>
+          <div class="datosficha">
+            <h4>{{ prod.nombre }}</h4>
+            <p>ID: {{ prod.id }}</p>
+            <div class="linea-vertical" style=" height:2px;width: 95%;background-color: #C4C7C4; border-radius: 3px;"></div>
+            <h4>Ya tienes:</h4>
+            <p style="color:#00C83C;">$ {{ prod.ahorro | number:'1.0-0' }}</p>
+          </div>
           <div class="info-adicional">
+            <div class="icono-info">
+              <img src="/check.png" alt="Icono">
+            </div>
             <p *ngIf="prod.recomendacion">{{ prod.recomendacion }}</p>
             <p *ngIf="prod.info">{{ prod.info }}</p>
+            <div class="barra-progreso" [style.background]="getColorProducto(prod.nombre)">
+            </div>
           </div>
         </div>
+
+        <!-- Card de publicidad / exploración -->
         <div class="producto-card imagen-card" style="background-image: url('/publicidad.png');">
           <h3 class="exploraAhora">Explora ahora</h3>
         </div>
       </div>
     </div>
 
+    <!-- Botón siguiente -->
     <button class="carrusel-btn next" (click)="moverCarrusel('next')">
       <img src="Fderecha.png" alt="Siguiente">
     </button>
   </div>
+
+  <!-- =========================
+       BOTÓN ASOCIAR OBJETIVO
+  ========================= -->
   <div class="container">
-  <button class="asociar-btn">ASOCIAR A OBJETIVO</button>
+    <button class="asociar-btn">ASOCIAR A OBJETIVO</button>
   </div>
-  
-  
-  
-  
+
 </div>
-
-

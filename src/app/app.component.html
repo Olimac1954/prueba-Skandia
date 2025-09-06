@@ -1,16 +1,19 @@
+<!-- Componente del navbar con evento personalizado toggleSidebar -->
 <app-navbar (toggleSidebar)="isSidebarOpen = !isSidebarOpen"></app-navbar>
 
 <div class="main-layout">
+  <!-- Sidebar lateral que recibe la propiedad isOpen -->
   <app-sidebar [isOpen]="isSidebarOpen"></app-sidebar>
 
+  <!-- Contenido principal -->
   <div class="content">
+    <!-- Aquí se cargan las rutas definidas con Angular Router -->
     <router-outlet></router-outlet>
+
+    <!-- Componente específico de objetivos -->
     <app-objetivo></app-objetivo>
   </div>
 </div>
-
-<app-footer></app-footer>
-
 
 
 

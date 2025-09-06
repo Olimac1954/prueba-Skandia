@@ -1,35 +1,65 @@
+/* ========================
+   RESET Y BODY
+======================== */
 body {
-  margin: 0;
-  padding-top: 60px; /* 👈 mismo alto que el navbar */
+  margin: 0;               /* Elimina el margen por defecto del navegador */
+  padding-top: 60px;       /* Deja espacio para que la navbar fija no tape el contenido */
 }
 
-
-/* Navbar */
+/* ========================
+   NAVBAR PRINCIPAL
+======================== */
 .navbar {
-  position: fixed;
+  position: fixed;          /* Fija la navbar en la parte superior */
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
-  display: flex;
-  align-items: center;
+  height: 60px;             /* Altura de la barra */
+  display: flex;            /* Flexbox para distribuir los elementos */
+  align-items: center;      /* Centrado vertical */
   background: #fff;
-  padding: 10px 1% ;
-  z-index: 1001; /* siempre encima de la sidebar */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* opcional */
+  padding: 10px 1%;         /* Espaciado interno */
+  z-index: 1001;            /* Asegura que quede encima de otros elementos */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra ligera */
 }
 
-.navbar-left, .navbar-right {/*se le dice que el navbar izquierdo y derecho se distribuyan el espacio de manera equitativa*/
- display: flex;
-  align-items: center;
+/* ========================
+   SECCIONES DE LA NAVBAR
+======================== */
+.navbar-left, .navbar-right {
+  display: flex;           /* Distribuye sus elementos con flex */
+  align-items: center;     /* Centrado vertical */
 }
 
-.navbar-BTlateral {/*estilo del boton del menu anburguesa*/
- flex: 0 0 auto;
- width: 20px;/*sele da un tamaño personalizado*/
- margin-right: 160px;
+.navbar-left {
+  flex: 1;                 /* Ocupa el espacio disponible */
+  gap: 10px;               /* Separación entre elementos */
 }
 
+.navbar-right {
+  flex: 1;
+  justify-content: flex-end; /* Empuja los elementos a la derecha */
+  gap: 25px;                /* Separación entre enlaces */
+  margin-right: 5%;
+}
+
+/* ========================
+   BOTÓN LATERAL (HAMBURGUESA)
+======================== */
+.navbar-BTlateral {
+  flex: 0 0 auto;          /* Tamaño fijo */
+  width: 20px;
+  margin-right: 160px;     /* Espaciado hacia la izquierda del contenido principal */
+}
+
+.icon3Bars {  
+  width: 20px;
+  height: 30px;  
+}
+
+/* ========================
+   LOGO Y TÍTULO
+======================== */
 .logo {
   height: 25px;
   margin-left: 10px;
@@ -39,7 +69,7 @@ body {
   display: inline-block;
   width: 3px;
   height: 28px;
-  background-color: #3F3F3F;
+  background-color: #3F3F3F; /* Separador visual */
   margin: 0 15px;
 }
 
@@ -47,26 +77,10 @@ body {
   font: 18px Montserrat, sans-serif;
   color: #3F3F3F;
 }
-.icon3Bars {  
-  width: 20px;
-  height: 30px;  
-}
 
-
-/* Lado izquierdo1 */
-.navbar-left {/*estilo de la parte izquieda del nabvar*/
- flex: 1; /* ocupa el espacio disponible */
-  gap: 10px;
-}
-
-/* Lado derecho */
-.navbar-right {
-  flex: 1; /* ocupa el resto */
-  justify-content: flex-end; /* se alinea a la derecha */
-  gap: 25px;
-  margin-right: 5%;
-}
-
+/* ========================
+   ENLACES Y ICONOS DERECHA
+======================== */
 .navbar-right a {
   text-decoration: none;
   color: green;
@@ -76,13 +90,12 @@ body {
   gap: 5px;
 }
 
-
 .navTitle2 {
   font: 16px verdana, sans-serif;
   color: #00C83C;
   font-weight: bold;
   text-decoration: underline;
-  white-space: nowrap;
+  white-space: nowrap; /* Evita que se rompa en varias líneas */
 }
 
 .navbar-right a:hover {
@@ -93,73 +106,51 @@ body {
   height: 33px;
 }
 
+/* ========================
+   TOOLTIP HELP
+======================== */
 .help {
-  position: relative; /* necesario para posicionar el span */
+  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 8px; /* espacio entre icono y texto */
-  text-decoration: none; /* quitar subrayado si es link */
-  color: #000; /* color del texto */
+  gap: 8px; 
+  text-decoration: none;
+  color: #000;
 }
 
 .tooltip-text {
-  font: 16px verdana, sans-serif;
-  display: none; /* inicialmente oculto */
-  font-size: 14px;
-  background: none; /* si quieres fondo, pon color */
-  color: #00C83C; /* ejemplo de color */
+  display: none; 
   flex-direction: column;
+  font-size: 14px;
+  font-family: verdana, sans-serif;
   font-weight: bold;
+  color: #00C83C; 
+  background: none;
 }
 
 .help:hover .tooltip-text {
-  display: flex; /* se muestra al pasar el cursor */
+  display: flex; /* Muestra el tooltip al pasar el mouse */
 }
 
-
-
-/* === RESPONSIVE === */
+/* ========================
+   RESPONSIVE
+======================== */
 
 /* Tablets */
 @media (max-width: 992px) {
-  .navTitle {
-    font-size: 16px;
-  }
-  .navTitle2 {
-    font-size: 12px;
-  }
-  .navbar-right {
-    gap: 10px;
-  }
+  .navTitle { font-size: 16px; }
+  .navTitle2 { font-size: 12px; }
+  .navbar-right { gap: 10px; }
 }
 
 /* Móviles */
 @media (max-width: 768px) {
-  .navTitle {
-    display: none; /* oculta texto largo */
-  }
-  .vertical-divider {
-    display: none;
-  }
-  .navbar-right span {
-    display: none; /* oculta textos, deja solo iconos */
-  }
-  .iconBar {
-    display: none; /* oculta textos, deja solo iconos */
-  }
-  
-  .navbar {
-    padding: 10px;
-  }
-  .navbar-right {
-    gap: 5px;
-  }
-  .navbar-right img {
-    height: 24px;
-  }
+  .navTitle { display: none; }
+  .vertical-divider { display: none; }
+  .navbar-right span { display: none; }
+  .iconBar { display: none; }
+
+  .navbar { padding: 10px; }
+  .navbar-right { gap: 5px; }
+  .navbar-right img { height: 24px; }
 }
-
-
-
-
-

@@ -1,3 +1,10 @@
+/* =========================================================
+   CSS de la sección "Objetivo"
+   Contiene: contenedor principal, header, resumen de objetivo,
+   mensaje motivacional, carrusel de productos y botón asociar.
+   ========================================================= */
+
+
 /* Contenedor principal */
 .objetivo-container {
   display: flex;
@@ -6,7 +13,7 @@
   gap: 5px;               /* Espacio entre header y resumen-objetivo reducido */
 }
 
-/* Header */
+/*=====Header======*/
 .header {
   display: flex;
   flex-direction: column;
@@ -31,7 +38,8 @@
   margin-top: 7px;
 }
 
-/* Inicio */
+/*======== Inicio ============*/
+
 .inicio-container {
   width: 100%;
   display: flex;
@@ -58,7 +66,8 @@
   font-weight: bold;
 }
 
-/* Contenido principal */
+/*======== Contenido principal ==========*/
+
 .content {
   width: 100%;
   margin: 0 auto;               /* Centra el contenido horizontalmente */
@@ -74,6 +83,9 @@
   background-position: center;
 }
 
+/*=====================
+  Contenido del cuadro de resumen
+ ==================*/
 .content1 {
   width: 100%;
   display: flex;
@@ -96,6 +108,7 @@
   position: relative;
 }
 
+/* primer contenedor de resumen objetivo */
 .resumenPT1 {
   display: flex;
   justify-content: space-between;
@@ -144,7 +157,8 @@
   color: white;
 }
 
-/* Datos */
+/* Datos del objetivo */
+
 .datos {
   display: flex;
   justify-content: space-around;
@@ -174,7 +188,7 @@
   border-radius: 4px;
 }
 
-/* Resumen PT2 */
+/* Resumen PT2 es el containder 2dario de resumen-objetivo */
 .resumenPT2 {
   display: flex;
   justify-content: space-between; /* texto a la izquierda, imagen a la derecha */
@@ -201,7 +215,7 @@
   border-radius: 10px;
 }
 
-/* Mensaje */
+/* Mensaje de meta que aparece en la mitad luego del cuado de progreso del objetivo */
 .mensaje {
   width: 100%;
   height: 400px;
@@ -232,7 +246,10 @@ h2 .monto {
   font-weight: bold;
 }
 
-/* Carrusel */
+/* ========
+Carrusel de fichas para ver todos los datos de la conexion con la API 
+==============*/
+
 .carrusel-container {
   position: relative;
   width: 100%;
@@ -264,6 +281,7 @@ h2 .monto {
 
 .producto-card {
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
@@ -273,6 +291,7 @@ h2 .monto {
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   border-radius: 8px;
   background: #fff;
+   margin-right: 20px;
 }
 
 .producto-card.imagen-card {
@@ -321,17 +340,39 @@ h2 .monto {
 }
 
 .info-adicional {
+  gap: 10px;
   display: flex;
+  flex-direction: column; /* Poner icono arriba del texto */
   width: 100%;
   height: 100%;
   background-color: #EDEDED;
-  font: 14px montserrat, sans-serif;
+  font: 15px montserrat, sans-serif;
   color: #3F3F3F;
   border-radius: 2px;
   text-align: center;
-  align-items: center;
+  align-items: center;    /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente */
   margin-top: 20%;
 }
+.icono-info{
+  width: 20px;
+  height: 20px;
+  margin-top: -80px;
+}
+/* barra que permite ver los colores de las tarjetas */
+
+.barra-progreso {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;         /* siempre llena la tarjeta */
+  height: 6px;         /* grosor de la barra */
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+/*========
+  estilo de tarjeta con publicidad de compra de productos
+  =========*/
 
 .imagen-card img {
   width: 100%;
@@ -352,6 +393,9 @@ h2 .monto {
   margin-top: 10px;
 }
 
+/*========
+  botones de navegación del carrusel
+  =========*/
 .carrusel-btn {
   position: absolute;
   top: 50%;
@@ -378,7 +422,7 @@ h2 .monto {
   right: 10px;
 }
 
-/* Botón asociar */
+/*==========Botón asociar==========*/
 .asociar-btn {
   padding: 0 30px;
   font: 16px montserrat, sans-serif;
@@ -394,10 +438,14 @@ h2 .monto {
   transform: translateY(-50%);
 }
 
-/* Carrusel responsive */
+
+/*====================
+  Carrusel responsive 
+=====================*/
+
 @media (max-width: 1024px) {
   .producto-card {
-    width: calc(50% - 10px); /* 2 tarjetas tablet */
+    width: calc(50% - 10px); 
   }
 
   .resumen-objetivo {

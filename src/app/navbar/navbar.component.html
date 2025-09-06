@@ -1,30 +1,40 @@
 <nav class="navbar">
-  <div class="navbar-BTlateral">  
-  <img src="/icon3Bars.png" (click)="toggleSidebar.emit()" alt="icon3Bars" class="icon3Bars">
-  </div>
-  <div class="navbar-left">
-    <img src="/logo.png" alt="Logo" class="logo">
-    <span class="vertical-divider"></span>
-    <span class="navTitle">Plan Financiero Digital - FPX</span>
+
+  <div class="navbar-BTlateral"><!-- Botón lateral (hamburguesa) para abrir/cerrar la barra lateral -->
+    <img 
+      src="/icon3Bars.png" 
+      (click)="toggleSidebar.emit()" 
+      alt="icon3Bars" 
+      class="icon3Bars"
+    >
   </div>
 
-  <div class="navbar-right">
+  <div class="navbar-left"><!-- Sección izquierda de la navbar: logo y título principal -->
+    <img src="/logo.png" alt="Logo" class="logo">
+    <span class="vertical-divider"></span> <!-- Separador vertical visual -->
+    <span class="navTitle">Plan Financiero Digital - FPX</span> <!-- Título de la aplicación -->
+  </div>
+
+  <div class="navbar-right"><!-- Sección derecha de la navbar: enlaces de usuario y accesos rápidos -->
+
     <a href="#">
-      <img src="/happy.png" alt="iconBar" class="iconBar">
+      <!-- Enlace a la sección "Tu Financial Planner" -->
+      <img src="/happy.png" alt="iconBar" class="iconBar"> 
       <span class="navTitle2">Tu Financial Planner</span>
     </a>
     
     <a href="#">
-      <img src="/hand3.png" alt="iconBar" class="iconBar" >
+      <!-- Enlace a la sección "Aportes" -->
+      <img src="/hand3.png" alt="iconBar" class="iconBar"> 
       <span class="navTitle2">Aportes</span>
     </a>
-    <a href="#" class="help">
-      <img src="/compfaq.png" alt="iconBar" class="iconBar">
-      <span class="tooltip-text">
+
+    <a href="#" class="help"><!-- Enlace a la sección de ayuda o preguntas frecuentes -->
+      <img src="/compfaq.png" alt="iconBar" class="iconBar"> 
+      <span class="tooltip-text"><!-- Tooltip que aparece al pasar el mouse sobre el ícono -->
         <span>Preguntas</span>
         <span>Frecuentes</span>
       </span>
     </a>
   </div>
 </nav>
-

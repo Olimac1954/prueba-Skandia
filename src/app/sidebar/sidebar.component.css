@@ -1,57 +1,70 @@
+/* ========================
+   BARRA LATERAL
+======================== */
 .sidebar {
-  position: fixed;
-  top: 80px; /* justo debajo del navbar */
+  position: fixed;                 /* Fija la barra lateral en la pantalla */
+  top: 80px;                       /* Justo debajo del navbar */
   left: 0;
-  height: calc(100% - 60px);
-  width: 70px; /* cerrado en escritorio */
-  background: #E2E2E2;
-  transition: width 0.3s ease;
-  overflow: hidden;
-  z-index: 999;
+  height: calc(100% - 60px);       /* Altura total menos navbar */
+  width: 70px;                      /* Ancho cerrado por defecto en escritorio */
+  background: #E2E2E2;             /* Color de fondo */
+  transition: width 0.3s ease;     /* Animación al abrir/cerrar */
+  overflow: hidden;                /* Oculta contenido desbordado */
+  z-index: 999;                     /* Sobre contenido general pero debajo del navbar */
 }
 
-/* Estado abierto */
+/* ========================
+   ESTADO ABIERTO
+======================== */
 .sidebar.open {
-  width: 250px;
+  width: 250px;                     /* Ancho cuando la sidebar está abierta */
 }
 
-/* Estilos internos */
+/* ========================
+   LISTA INTERNA
+======================== */
 .sidebar ul {
-  list-style: none;
+  list-style: none;                 /* Quita los bullets */
   padding: 0;
   margin: 0;
 }
 
 .sidebar li {
   padding: 15px;
-  align-items: center;
   display: flex;
-  cursor: pointer;
+  align-items: center;              /* Centrado vertical de icono y texto */
+  cursor: pointer;                  /* Cambia cursor al pasar sobre el item */
 }
 
 .sidebar li:hover {
-  background-color: #00C83C; /* verde en hover */
+  background-color: #00C83C;        /* Resalta el item al pasar el mouse */
 }
 
+/* ========================
+   ICONOS Y TEXTO
+======================== */
 .icon {
-  width: 23px;
+  width: 23px;                      /* Tamaño de los iconos */
   margin-left: 7px;
 }
 
 .titleLateral {
   color: #3F3F3F;
   font: 18px Montserrat, sans-serif;
-  margin-left: 15px;
-  white-space: nowrap;
+  margin-left: 15px;                /* Separación entre icono y texto */
+  white-space: nowrap;              /* Evita que el texto se rompa en varias líneas */
 }
 
-/* ----------- Responsivo ----------- */
+/* ========================
+   RESPONSIVE
+======================== */
 @media (max-width: 768px) {
-  /* en móvil la barra arranca oculta */
+  /* En móvil la barra inicia oculta */
   .sidebar {
-    width: 0;
+    width: 0;                        /* Sidebar cerrada */
   }
+
   .sidebar.open {
-    width: 250px; /* se despliega encima */
+    width: 250px;                     /* Sidebar desplegada encima del contenido */
   }
 }

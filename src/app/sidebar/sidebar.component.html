@@ -1,31 +1,42 @@
 <div class="sidebar" [class.open]="isOpen">
+  <!-- La clase 'open' se aplica dinámicamente con Angular según la variable isOpen -->
+
   <ul>
-    <li >
-      <!-- imagen como icono -->
-      <img src="/home.png" class="icon" alt="Inicio">
-      <!-- texto -->
-      <span *ngIf="isOpen" class="titleLateral">Inicio</span>
+    <!-- Lista de elementos de la barra lateral -->
+    <li>
+      <!-- Item de menú: Inicio -->
+      <img src="/home.png" class="icon" alt="Inicio"> <!-- Icono del item -->
+      <span *ngIf="isOpen" class="titleLateral">Inicio</span> <!-- Texto visible solo si la sidebar está abierta -->
     </li>
-    <li >
+
+    <li>
+      <!-- Item de menú: Contratos -->
       <img src="/hoja1.png" class="icon" alt="Contratos">
       <span *ngIf="isOpen" class="titleLateral">Contratos</span>
     </li>
+
     <li>
+      <!-- Item de menú: Acciones -->
       <img src="/Tool.png" class="icon" alt="Acciones">
       <span *ngIf="isOpen" class="titleLateral">Acciones</span>
     </li>
+
     <li>
+      <!-- Item de menú: Objetivos -->
       <img src="/star.png" class="icon" alt="Aportes">
       <span *ngIf="isOpen" class="titleLateral">Objetivos</span>
     </li>
+
     <li>
+      <!-- Item de menú: Herramientas -->
       <img src="/money.png" class="icon" alt="Herramientas">
       <span *ngIf="isOpen" class="titleLateral">Herramientas</span>
     </li>
+
     <li>
+      <!-- Item de menú: Servicio al cliente -->
       <img src="/talk2.png" class="icon" alt="ServicioAlCliente">
       <span *ngIf="isOpen" class="titleLateral">Servicio al cliente</span>
     </li>
   </ul>
 </div>
-

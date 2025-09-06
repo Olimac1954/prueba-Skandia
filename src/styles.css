@@ -1,9 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
-:root{
-  --navbar-height: 64px;        /* ajusta a la altura real de tu navbar */
-  --sidebar-collapsed: 60px;
-  --sidebar-expanded: 220px;
-  --navbar-z: 1100;
-  --sidebar-z: 1000;
+/* Definición de variables globales (custom properties) */
+:root {
+  --navbar-height: 64px;        /* Altura del navbar, se puede usar en todo el CSS */
+  --sidebar-collapsed: 60px;    /* Ancho del sidebar cuando está cerrado */
+  --sidebar-expanded: 220px;    /* Ancho del sidebar cuando está abierto */
+  --navbar-z: 1100;             /* Z-index del navbar para que esté encima de otros elementos */
+  --sidebar-z: 1000;            /* Z-index del sidebar, por debajo del navbar */
 }
-html,body { height:100%; margin:0;overflow-x: hidden; }
+
+/* Configuración global de html y body */
+html, body { 
+  height: 100%;                 /* Hace que el body ocupe toda la altura de la ventana */
+  margin: 0;                     /* Elimina márgenes por defecto */
+  overflow-x: hidden;            /* Evita scroll horizontal innecesario */
+}
