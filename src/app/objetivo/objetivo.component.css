@@ -1,47 +1,50 @@
+/* Contenedor principal */
 .objetivo-container {
   display: flex;
   flex-direction: column;
   align-items: center;    /* Centrado horizontal */
-  gap: 5px;              /* Espacio entre header y resumen-objetivo reducido */
+  gap: 5px;               /* Espacio entre header y resumen-objetivo reducido */
 }
 
+/* Header */
 .header {
   display: flex;
   flex-direction: column;
   background: none;       /* Sin fondo */
   box-shadow: none;       /* Sin sombra */
+  margin-top: 4%;
   margin-bottom: 0;       /* Sin margen adicional */
   justify-content: flex-start; /* Alinea al inicio */
-  margin-top: 4%;
 }
 
 .header h2 {
   color: #fffefe;
   margin-bottom: 0px;
-  font: 35px monserrat, sans-serif;
+  font: 35px montserrat, sans-serif;
   font-weight: bold;
   white-space: nowrap;
 }
 
 .header p {
   color: #fffefe;
-  font: 20px monserrat, sans-serif;
+  font: 20px montserrat, sans-serif;
   margin-top: 7px;
 }
 
+/* Inicio */
 .inicio-container {
   width: 100%;
   display: flex;
   justify-content: flex-start; /* Alinea a la izquierda */
+  align-items: center;  
   margin-bottom: 10px;         /* Espacio con el contenido */
-  margin-left:2%;
+  margin-left: 2%;
   margin-top: 30px;  
   padding-left: 6%;
-  align-items: center;  
 }
 
-.inicio-container a{
-  margin-left : 10px;
+.inicio-container a {
+  margin-left: 10px;
   font: 15px verdana, sans-serif;
   color: #f3f5f3;
   font-weight: bold;
@@ -55,27 +58,14 @@
   font-weight: bold;
 }
 
-.productos {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.producto-card {
-  background: #f8f8f8;
-  padding: 15px;
-  border-radius: 6px;
-  flex: 1 1 200px;
-  box-shadow: 0 0 5px #ddd;
-}
-
+/* Contenido principal */
 .content {
   width: 100%;
-  margin: 0 auto;        /* Centra el contenido horizontalmente */
-  text-align: center;     /* Por defecto centra el texto */
+  margin: 0 auto;               /* Centra el contenido horizontalmente */
   display: flex;
   flex-direction: column;
-  gap: 10px;              /* Espacio entre el enlace y el header */
+  gap: 10px;                     /* Espacio entre el enlace y el header */
+  text-align: center;            /* Centra el texto */
   background-image: 
     linear-gradient(rgba(8, 199, 167, 0.3), rgba(0, 128, 96, 0.3)), /* overlay verde semitransparente */
     url('/espacio.jpg'); /* imagen de fondo */
@@ -85,65 +75,61 @@
 }
 
 .content1 {
-  margin-bottom: -120px;
+  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex-start;  /* arriba del contenedor */
-  width: 100%;
+  align-items: flex-start;      /* arriba del contenedor */
+  margin-bottom: -120px;
   padding: 2px 0;
 }
 
+/* Resumen objetivo */
 .resumen-objetivo {
-  width: 90% ;
+  width: 90%;
   max-width: 700px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.2);
   text-align: center;
   display: flex;
-  flex-direction: column;  /* permite empujar la parte inferior */
+  flex-direction: column;       /* permite empujar la parte inferior */
   position: relative;
 }
 
-.resumenPT1{
+.resumenPT1 {
   display: flex;
   justify-content: space-between;
   padding: 4% 5%;
 }
 
-.izquierda div, .derecha div {
-  margin: 0 5px;               /* separación entre objetos */
-  padding: 10px;
-  background-color: coral;
-  color: white;
-}
-
-.izquierda{
-  text-align: left;
+.izquierda {
+  display: flex;
   flex-direction: column;
- display: flex;
- align-items: flex-start;
+  align-items: flex-start;
+  text-align: left;
 }
 
-.izquierda h3{
- font: 20px verdana, sans-serif;
+.izquierda h3 {
+  font: 20px verdana, sans-serif;
   color: #3F3F3F;
   font-weight: bold;
   white-space: nowrap;
-  margin: 0;        /* elimina márgenes por defecto */
-  padding: 0;       /* elimina padding por defecto */
-  line-height: 1.2; /* reduce altura de línea */
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
 }
+
 .izquierda p {
- font: 13px verdana, sans-serif;
+  font: 13px verdana, sans-serif;
   color: #3F3F3F;
   font-weight: bold;
   white-space: nowrap;
-  margin: 0;        /* elimina márgenes por defecto */
-  padding: 0;       /* elimina padding por defecto */
-  line-height: 1.2; /* reduce altura de línea */
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
 }
-.derecha{
+
+.derecha {
   font: 15px verdana, sans-serif;
   color: #00C83C;
   font-weight: bold;
@@ -151,6 +137,14 @@
   white-space: nowrap;
 }
 
+.izquierda div, .derecha div {
+  margin: 0 5px; 
+  padding: 10px;
+  background-color: coral;
+  color: white;
+}
+
+/* Datos */
 .datos {
   display: flex;
   justify-content: space-around;
@@ -159,32 +153,32 @@
 }
 
 .dato {
-  width: 28%;            /* ancho fijo para cada dato */
   display: flex;
   flex-direction: column; /* apila verticalmente label y valor */
-  margin-bottom: 5px;     /* separación entre datos */
+  width: 28%;             /* ancho fijo para cada dato */
+  margin-bottom: 5px;
 }
 
 .label {
-  font-weight: bold;      /* opcional, para resaltar el texto de arriba */
-   font: 15px montserrat, sans-serif;
-   color: #3F3F3F;
-}
-.valor{
-  margin-top: 10%;
-  font-weight: bold;      /* opcional, para resaltar el texto de arriba */
-   font: 15px montserrat, sans-serif;
-   color: #3F3F3F;
-   font-weight: bold;
-   padding: 3px;
-   border-radius: 4px;
+  font: 15px montserrat, sans-serif;
+  color: #3F3F3F;
+  font-weight: bold;
 }
 
+.valor {
+  font: 15px montserrat, sans-serif;
+  color: #3F3F3F;
+  font-weight: bold;
+  margin-top: 10%;
+  padding: 3px;
+  border-radius: 4px;
+}
+
+/* Resumen PT2 */
 .resumenPT2 {
   display: flex;
   justify-content: space-between; /* texto a la izquierda, imagen a la derecha */
   align-items: center;            /* centra verticalmente los elementos */
-  font-weight: bold;
   font: 15px verdana, sans-serif;
   color: #00C83C;
   font-weight: bold;
@@ -192,11 +186,11 @@
   margin-top: auto;               /* empuja la sección al fondo del contenedor */
 }
 
-.resumenPT2 span{
-  margin-left: 5% ;
+.resumenPT2 span {
+  margin-left: 5%;
 }
 
-.resumenPT2 image{  
+.resumenPT2 image {
   height: 5px;
 }
 
@@ -207,39 +201,205 @@
   border-radius: 10px;
 }
 
+/* Mensaje */
 .mensaje {
-  padding: 50px 20px; /* antes era 150px, demasiado en móviles */
   width: 100%;
+  height: 400px;
+  padding: 55px 20px;
   text-align: center;
-  background-image: url('/fondo.png'); /* Ruta de la imagen */
+  background-image: url('/fondo.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-.mensaje p{
-  font: 15px montserrat, sans-serif;
-  margin: 2px;
-   color: #3F3F3F;
-   font-weight: bold;
-}
-
-.mensaje h2{
+.mensaje h2 {
   margin-top: 120px;
   font: 35px montserrat, sans-serif;
   color: #3F3F3F;
   font-weight: bold;
 }
 
-h2 .monto {
-  font: 35px montserrat, sans-serif;
-  color: #FD980F; /* color solo del monto */
-  font-weight: bold; /* opcional, para resaltarlo */
+.mensaje p {
+  font: 15px montserrat, sans-serif;
+  margin: 2px;
+  color: #3F3F3F;
+  font-weight: bold;
 }
 
-/* responsive*/
-/* Tablets */
+h2 .monto {
+  color: #FD980F;
+  font-weight: bold;
+}
+
+/* Carrusel */
+.carrusel-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-top: -200px;
+  overflow-x: hidden;
+}
+
+.carrusel-wrapper {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 30px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;  /* IE y Edge */
+  scrollbar-width: none;      /* Firefox */
+}
+
+.carrusel {
+  display: flex;
+  gap: 20px;
+  padding: 10px 10%;
+  transition: transform 0.5s ease;
+}
+
+.producto-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 0 0 calc((100% - 40px) / 3); /* 3 fichas visibles en escritorio */
+  height: 400px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.producto-card.imagen-card {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  text-align: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+
+.check {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.datosficha {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  text-align: left;
+}
+
+.datosficha h4 {
+  margin-bottom: 0;
+  font: 17px montserrat, sans-serif;
+  color: #3F3F3F;
+  font-weight: bold;
+  width: 100%;
+  text-align: left;
+}
+
+.datosficha p {
+  margin-top: 5px;
+  font: 18px montserrat, sans-serif;
+  color: #3F3F3F;
+  text-align: left;
+  width: 100%;
+}
+
+.info-adicional {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: #EDEDED;
+  font: 14px montserrat, sans-serif;
+  color: #3F3F3F;
+  border-radius: 2px;
+  text-align: center;
+  align-items: center;
+  margin-top: 20%;
+}
+
+.imagen-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.exploraAhora {
+  font: 15px montserrat, sans-serif;
+  color: #f0f0f0;
+  text-align: left;
+  margin-left: 10px;
+  white-space: nowrap;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: #00C83C;
+  margin-top: 10px;
+}
+
+.carrusel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
+
+.carrusel-btn img {
+  width: 40px;
+  height: 40px;
+}
+
+.carrusel-btn.prev {
+  left: 10px;
+  margin-left: 5%;
+}
+
+.carrusel-btn.next {
+  right: 10px;
+}
+
+/* Botón asociar */
+.asociar-btn {
+  padding: 0 30px;
+  font: 16px montserrat, sans-serif;
+  font-weight: bold;
+  height: 50px;
+  border-radius: 20px;
+  background-color: #E2E2E2;
+  color: #3F3F3F;
+  border: none;
+  margin: 100px 10px;
+  top: 10%;
+  right: 5%;
+  transform: translateY(-50%);
+}
+
+/* Carrusel responsive */
 @media (max-width: 1024px) {
+  .producto-card {
+    width: calc(50% - 10px); /* 2 tarjetas tablet */
+  }
+
   .resumen-objetivo {
     width: 80%;
   }
@@ -264,10 +424,22 @@ h2 .monto {
   .mensaje h2 {
     font-size: 18px;
   }
+
+  .carrusel-btn {
+    display: none; /* flechas desaparecen en tablet */
+  }
 }
 
-/* Móviles */
 @media (max-width: 768px) {
+  .carrusel {
+    padding: 10px 2%;
+    gap: 10px;
+  }
+
+  .producto-card {
+    flex: 0 0 100%; /* 1 ficha visible */
+  }
+
   .inicio-container {
     flex-direction: column;
     align-items: flex-start;

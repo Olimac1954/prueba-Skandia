@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ObjetivoComponent } from './objetivo/objetivo.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { ObjetivoComponent } from './objetivo/objetivo.component';
     SidebarComponent,
     NavbarComponent,
     ObjetivoComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

@@ -46,17 +46,46 @@
     <p>Asocia tus productos o adquiere uno nuevo. <img src="/Group.png" class="icon" alt="Inicio"style="height: 15px; margin-right: 10px;" ></p>
   </div>
 
+    <div class="carrusel-container">
+    <button class="carrusel-btn prev" (click)="moverCarrusel('prev')">
+      <img src="/Fizquierda.png" alt="Anterior">
+    </button>
 
-</div>
-
-<div class="productos">
-  <div class="producto-card" *ngFor="let prod of productos">
-    <h4>{{ prod.nombre }}</h4>
-    <p>ID: {{ prod.id }}</p>
-    <p>Ya cuentas con: {{ prod.ahorro | currency:'COP' }}</p>
-    <div class="info-adicional">
-      <p *ngIf="prod.recomendacion">{{ prod.recomendacion }}</p>
-      <p *ngIf="prod.info">{{ prod.info }}</p>
+    <div class="carrusel-wrapper">
+      <div class="carrusel" id="carrusel">
+        <div class="producto-card" *ngFor="let prod of productos">
+          <div class="check">
+            <img src="/cuadradoCH.png" alt="Anterior" style="height: 20px;">
+          </div>
+            <div class="datosficha">
+              <h4>{{ prod.nombre }}</h4>
+              <p>ID: {{ prod.id }}</p>
+              <div class="linea-vertical" style=" height:2px;width: 95%;background-color: #C4C7C4; border-radius: 3px;"></div>
+              <h4>{{ prod.nombre }}</h4>
+              <p style="color:#00C83C;">{{ prod.ahorro | currency:'COP' }}</p>
+            </div>
+          <div class="info-adicional">
+            <p *ngIf="prod.recomendacion">{{ prod.recomendacion }}</p>
+            <p *ngIf="prod.info">{{ prod.info }}</p>
+          </div>
+        </div>
+        <div class="producto-card imagen-card" style="background-image: url('/publicidad.png');">
+          <h3 class="exploraAhora">Explora ahora</h3>
+        </div>
+      </div>
     </div>
+
+    <button class="carrusel-btn next" (click)="moverCarrusel('next')">
+      <img src="Fderecha.png" alt="Siguiente">
+    </button>
   </div>
+  <div class="container">
+  <button class="asociar-btn">ASOCIAR A OBJETIVO</button>
+  </div>
+  
+  
+  
+  
 </div>
+
+
