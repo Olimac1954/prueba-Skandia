@@ -10,6 +10,8 @@ La aplicación incluye **4 componentes principales**:
 - **Footer** (pie de página)  
 - **Objetivo** (visualización de la información requerida)  
 
+Adicionalmente incluye el **servicio y interfaz para el consumo de la API suministrada**
+
 🔗 Diseño previo: [Adobe XD](https://xd.adobe.com/view/7520751b-2b53-4b0f-9613-527817e8cc92-2073/specs/)  
 🔗 Endpoint API: [MockAPI](https://62e152f8fa99731d75d44571.mockapi.io/api/v1/test-front-end-skandia/cards)
 
@@ -75,6 +77,7 @@ Asegúrate de tener instalado lo siguiente:
         package.json # Dependencias y scripts del proyecto
         tsconfig*.json # Configuración de TypeScript
         README.md # Documentación principal
+
 6. Autor/es o equipo de desarrollo.
 
     Andrés Ayala (@Olimac1954) – Desarrollo e implementación del proyecto.
